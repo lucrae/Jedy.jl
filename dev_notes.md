@@ -1,3 +1,11 @@
+# To-do
+
+[x] Create Julia package
+[x] Set up documentation generation
+[ ] Write docstrings
+[ ] Set up testing system
+
+
 # Documentation
 
 ## Generate documentation
@@ -10,7 +18,7 @@ DocumenterTools.generate()
 ## Compile documentation HTML
 
 ```bash
-julia docs/make.js
+julia docs/make.jl
 ```
 
 Will generate the web documentation in `docs/build/index.html`.
@@ -25,3 +33,8 @@ First of all, run `julia` and use `]` to enter package mode (`;` to go back), an
 (Jedy) pkg> test
 ```
 
+## Add dependency
+
+```
+(Jedy) pkg> add PACKAGE_NAME
+```

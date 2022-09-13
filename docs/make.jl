@@ -1,9 +1,10 @@
 using Documenter
+
 using Jedy
+
 
 makedocs(
     sitename = "Jedy",
-    format = Documenter.HTML(),
     modules = [Jedy]
 )
 
