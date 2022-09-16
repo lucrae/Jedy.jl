@@ -56,9 +56,17 @@ for i in 1:n
 end
 
 
+# Create logger
+function logger(agents::Array{Jedy.Agent})
+    vals = map(a -> a.body["behaviour"], agents)
+    return "pd.log", vals
+end
+
+
 Jedy.run_simulation!(agents,
                      compute_prisoners_dilemma_fitnesses,
                      perform_imitation_process!,
-                     100)
+                     5,
+                     logger)
 
-println(agents)
+# println(agents)
