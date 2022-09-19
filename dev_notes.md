@@ -2,9 +2,10 @@
 
 [x] Create Julia package
 [x] Set up documentation generation
-[ ] Write docstrings
-[ ] Set up testing system
-
+[x] Write docstrings
+[ ] Write simple tests
+[ ] CSV
+[ ] Running from command-line (pass a json file of parameters)
 
 # Documentation
 
