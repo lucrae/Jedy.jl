@@ -1,6 +1,6 @@
 module Jedy
 
-using CSV, Tables, Formatting
+using CSV, Tables, Formatting, ProgressBars
 
 
 """
@@ -71,7 +71,7 @@ function run_simulation!(agents::Array{Agent},
     end
 
     # Run epochs
-    for _ in 1:n_epochs
+    for _ in ProgressBar(1:n_epochs)
         # Single epoch of simulation
         fitnesses = fitnesses_computer(agents)
         evolutionary_process!(agents, fitnesses)

@@ -3,9 +3,16 @@
 [x] Create Julia package
 [x] Set up documentation generation
 [x] Write docstrings
+[x] CSV logging
+[x] Progress bar
+[ ] Deploy documentation (https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
+[ ] Wry-Fisher evolutionary process
+[ ] Optimise CSV logging (dataframe -> CSV)
 [ ] Write simple tests
-[ ] CSV
 [ ] Running from command-line (pass a json file of parameters)
+[ ] Documentation
+    [ ] Introduction
+    [ ] Examples
 
 # Documentation
 
