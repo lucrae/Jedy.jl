@@ -4,8 +4,9 @@ using Jedy
 
 
 makedocs(
-    sitename = "Jedy",
-    modules = [Jedy]
+    sitename = "Jedy.jl",
+    modules = [Jedy],
+    repo = "github.com/lucrae/Jedy.jl.git"
 )
 
 # Documenter can also automatically deploy documentation to gh-pages.
