@@ -4,7 +4,7 @@ using Jedy
 
 
 makedocs(
-    sitename = "Jedy.jl",
+    sitename = "Jedy",
     modules = [Jedy],
     repo = "github.com/lucrae/Jedy.jl.git"
 )
