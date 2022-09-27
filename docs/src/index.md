@@ -1,13 +1,13 @@
 # Jedy.jl
 
-*J*ulia *E*volutionary *Dy*namics
+> A Julia package for developing agent-based simulations & evolutionary dynamics.
 
 !!! warning
 
     Under construction...
 
-## Contents
+See [Usage](@ref) for a concise introduction to installing/using Jedy.
 
-```@contents
-Pages = ["api.md"]
-```
+See [API](@ref) for documentation on Jedy's functions/types/etc.
+
+See [Examples](@ref) for examples of using Jedy.

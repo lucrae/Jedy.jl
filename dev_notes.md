@@ -6,7 +6,7 @@
 [x] CSV logging
 [x] Progress bar
 [ ] Deploy documentation (https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
-[ ] Wry-Fisher evolutionary process
+[ ] Wright-Fisher evolutionary process
 [ ] Optimise CSV logging (dataframe -> CSV)
 [ ] Write simple tests
 [ ] Running from command-line (pass a json file of parameters)

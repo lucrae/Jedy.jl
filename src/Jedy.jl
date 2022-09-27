@@ -10,8 +10,8 @@ Basic struct for a single agent.
 
 ### Fields
 
-- `body` -- A `Dict` or `Array` data structure of attributes of the agent able to be involved in an evolutionary process.
-- *(Optional)* `body_hidden` -- A `Dict` or `Array` data structure of attributes that will not be mutated/imitated/involved if the agent is used in an evolutionary process.
+- `body::Union{Dict, Array}` -- A `Dict` or `Array` data structure of attributes of the agent able to be involved in an evolutionary process.
+- *(Optional)* `body_hidden::Union{Dict, Array}` -- A `Dict` or `Array` data structure of attributes that will not be mutated/imitated/involved if the agent is used in an evolutionary process.
 
 ### Examples
 
