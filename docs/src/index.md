@@ -6,7 +6,7 @@
 
     Under construction...
 
-See [Usage](@ref) for a concise introduction to installing/using Jedy.
+See [Getting Started](@ref) for an easy introduction to installing/using Jedy.
 
 See [API](@ref) for documentation on Jedy's functions/types/etc.
 

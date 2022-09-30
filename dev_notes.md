@@ -5,7 +5,7 @@
 [x] Write docstrings
 [x] CSV logging
 [x] Progress bar
-[ ] Deploy documentation (https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
+[x] Deploy documentation
 [ ] Wright-Fisher evolutionary process
 [ ] Optimise CSV logging (dataframe -> CSV)
 [ ] Write simple tests
