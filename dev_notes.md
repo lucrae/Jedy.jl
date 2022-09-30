@@ -35,10 +35,10 @@ Will generate the web documentation in `docs/build/index.html`.
 
 First of all, run `julia` and use `]` to enter package mode (`;` to go back), and activate Jedy in this REPL with `activate .`.
 
-## Install local dev package
+## Install local dev package (to run scripts using Jedy)
 
 ```
-(Jedy) pkg> dev .
+(@) pkg> dev .
 ```
 
 ## Run tests
