@@ -9,6 +9,7 @@ makedocs(
     repo = "github.com/lucrae/Jedy.jl.git",
     pages = [
         "Home" => "index.md",
+        "Introduction" => "introduction.md",
         "Getting Started" => "getting_started.md",
         "API" => "api.md",
         "Examples" => "examples.md"
