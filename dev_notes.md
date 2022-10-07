@@ -6,9 +6,9 @@
 [x] CSV logging
 [x] Progress bar
 [x] Deploy documentation
-[ ] Examples
-[ ] Documentation - Introduction
+[x] Documentation - Introduction
 [ ] Wright-Fisher evolutionary process
+[ ] Examples
 [ ] Optimise CSV logging (dataframe -> CSV)
 [ ] Running from command-line (pass a json file of parameters)
 

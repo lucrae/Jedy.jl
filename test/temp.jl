@@ -1,7 +1,5 @@
-vals = [1, 4, 2, 3]
+fitnesses = [2367.0, 2450.0, 2416.0, 2506.0, 2502.0, 2380.0, 2450.0, 0.0, 2501.0, 2440.0]
 
-println(vals)
+w = 1.0
 
-b = transpose(hcat(vals))
-
-println(b)
+println(1 - w .+ w * fitnesses)
