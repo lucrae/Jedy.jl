@@ -14,10 +14,10 @@ pkg> add https://github.com/lucrae/Jedy.jl.git
 
 ## Usage
 
-Simply add `using Jedy` to the top of your script, for example:
+Simply import `Jedy` and use the functions/types in the [API](@ref). For example:
 
 ```julia
-using Jedy
+import Jedy
 
 a = Jedy.Agent("behaviour" => 1)
 ```
