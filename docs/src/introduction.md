@@ -20,6 +20,11 @@ Jedy (name originating from from *J*ulia *E*volutionary *DY*namics) is a package
 
 Jedy has been developed by [Lucien Rae Gentil](https://lucienrae.com) with the supervision and expertise of [Julian Garcia](https://www.garciajulian.com/). The source code is open-source and available [here](https://github.com/lucrae/Jedy.jl), open to contributions, alongside thorough [documentation](https://lucrae.github.io/Jedy.jl/stable/).
 
+For in-depth examples and complete documentation of Jedy's API:
+
+- See [Examples](@ref) for examples of using Jedy.
+- See [API](@ref) for complete documentation on Jedy's functions/types/etc.
+
 ## References and Resources
 
 - Hindersin, L., Wu, B., Traulsen, A., &#38; García, J. (2019). Computation and Simulation of Evolutionary Game Dynamics in Finite Populations. *Scientific Reports*, *9*(1). [Open Access](https://doi.org/10.1038/s41598-019-43102-z).
