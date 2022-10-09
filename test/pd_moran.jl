@@ -44,11 +44,11 @@ function compute_prisoners_dilemma_fitnesses(agents::Array{Jedy.Agent}) :: Array
 end
 
 
-perform_imitation_process! = Jedy.EvolutionProcesses.create_imitation_process(1.0)
+evolution! = Jedy.EvolutionProcesses.create_moran_process(1.0)
 
 
 # Create set of agents
-n = 10
+n = 6
 agents = Array{Jedy.Agent}(undef, n)
 for i in 1:n
     # Create agent, behaviour=(true, false)=(defects, cooperates)
@@ -56,17 +56,18 @@ for i in 1:n
 end
 
 
-# Create logger
-function logger(agents::Array{Jedy.Agent})
-    vals = map(a -> a.body["behaviour"], agents)
-    return "temp.log", vals
-end
+println(agents)
 
 
-Jedy.run_simulation!(agents,
-                     compute_prisoners_dilemma_fitnesses,
-                     perform_imitation_process!,
-                     5,
-                     logger)
+fitnesses = compute_prisoners_dilemma_fitnesses(agents)
 
-# println(agents)
+evolution!(agents, fitnesses)
+
+
+# Jedy.run_simulation!(agents,
+#                      compute_prisoners_dilemma_fitnesses,
+#                      evolution!,
+#                      1,
+#                      nothing)
+
+println(agents)

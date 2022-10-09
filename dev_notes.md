@@ -5,14 +5,12 @@
 [x] Write docstrings
 [x] CSV logging
 [x] Progress bar
-[ ] Deploy documentation (https://juliadocs.github.io/Documenter.jl/stable/man/hosting/)
+[x] Deploy documentation
+[x] Documentation - Introduction
 [ ] Wright-Fisher evolutionary process
+[ ] Examples
 [ ] Optimise CSV logging (dataframe -> CSV)
-[ ] Write simple tests
 [ ] Running from command-line (pass a json file of parameters)
-[ ] Documentation
-    [ ] Introduction
-    [ ] Examples
 
 # Documentation
 
@@ -35,10 +33,10 @@ Will generate the web documentation in `docs/build/index.html`.
 
 First of all, run `julia` and use `]` to enter package mode (`;` to go back), and activate Jedy in this REPL with `activate .`.
 
-## Install local dev package
+## Install local dev package (to run scripts using Jedy)
 
 ```
-(Jedy) pkg> dev .
+(@) pkg> dev .
 ```
 
 ## Run tests
