@@ -19,3 +19,9 @@ First appearing in 2012–relatively recent for a programming language–the Jul
 Jedy (name originating from from *J*ulia *E*volutionary *DY*namics) is a package for Julia that provides useful building blocks to run agent-based simuations. The primary focus is to provide abstractions that allow for quick, intuitive, and reliable development of agent-based ideas, and already implemented and tested functions to run commonly-used evolutionary algorithms such as imitation processes and Wright-Fisher evolution.
 
 Jedy has been developed by [Lucien Rae Gentil](https://lucienrae.com) with the supervision and expertise of [Julian Garcia](https://www.garciajulian.com/). The source code is open-source and available [here](https://github.com/lucrae/Jedy.jl), open to contributions, alongside thorough [documentation](https://lucrae.github.io/Jedy.jl/stable/).
+
+## References and Resources
+
+- Hindersin, L., Wu, B., Traulsen, A., &#38; García, J. (2019). Computation and Simulation of Evolutionary Game Dynamics in Finite Populations. *Scientific Reports*, *9*(1). [Open Access](https://doi.org/10.1038/s41598-019-43102-z).
+- Traulsen, A., &#38; Hauert, C. (2009). Stochastic evolutionary game dynamics. *Reviews of Nonlinear Dynamics and Complexity*, *2*, 25–61. [PDF](https://arxiv.org/pdf/0811.3538.pdf).
+- Xu, J., Garcia, J., &#38; Handfield, T. (2019). Cooperation with bottom-up reputation dynamics. *Proceedings of the 18th International Conference on Autonomous Agents and MultiAgent Systems*, 269–276. [PDF](https://www.ifaamas.org/Proceedings/aamas2019/pdfs/p269.pdf).
