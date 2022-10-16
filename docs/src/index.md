@@ -4,6 +4,10 @@
 
 Jedy provides fundamental tooling to work with agents and evolutionary algorithms, making use of Julia's speed and ease-of-development.
 
+- See [Examples](@ref) for examples of using Jedy.
+- See [API](@ref) for complete documentation on Jedy's functions/types/etc.
+- See [Report](@ref) for an in-depth explanation to Jedy's motivation and approach.
+
 ## Installation
 
 Open the Julia REPL in your terminal with `julia`, type `]` to enter the Pkg mode, and run:
@@ -22,8 +26,10 @@ import Jedy
 a = Jedy.Agent("behaviour" => 1)
 ```
 
-## Resources
+---
 
-- See [Introduction](@ref) for an in-depth explanation to Jedy's motivation and approach. 
-- See [Examples](@ref) for examples of using Jedy.
-- See [API](@ref) for complete documentation on Jedy's functions/types/etc.
+Latest release:
+
+[![Version](https://shields.io/github/v/release/lucrae/Jedy.jl?display_name=tag)](https://github.com/lucrae/Jedy.jl/releases) [![Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://lucrae.github.io/Jedy.jl/stable)  [![Tests](https://github.com/lucrae/Jedy.jl/actions/workflows/tests.yml/badge.svg)](https://github.com/lucrae/Jedy.jl/actions/workflows/tests.yml) [![Documentation](https://github.com/lucrae/Jedy.jl/actions/workflows/documentation.yml/badge.svg)](https://lucrae.github.io/Jedy.jl)
+
+Open-sourced on [GitHub](https://github.com/lucrae/Jedy.jl).
