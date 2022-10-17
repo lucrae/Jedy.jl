@@ -18,7 +18,7 @@ First appearing in 2012–relatively recent for a programming language–the Jul
 
 Jedy (name originating from from *J*ulia *E*volutionary *DY*namics) is a package for Julia that provides useful building blocks to run agent-based simuations. The primary focus is to provide abstractions that allow for quick, intuitive, and reliable development of agent-based ideas, and already implemented and tested functions to run commonly-used evolutionary algorithms such as imitation processes and Wright-Fisher evolution.
 
-Jedy has been developed by [Lucien Rae Gentil](https://lucienrae.com) with the supervision and expertise of [Julian Garcia](https://www.garciajulian.com/). The source code is open-source and available [here](https://github.com/lucrae/Jedy.jl), open to contributions, alongside thorough [documentation](https://lucrae.github.io/Jedy.jl/stable/).
+Jedy has been developed by [Lucien Rae Gentil](https://lucienrae.com) with the supervision and expertise of [Julián García](https://www.garciajulian.com/). The source code is open-source and available [here](https://github.com/lucrae/Jedy.jl), open to contributions, alongside thorough [documentation](https://lucrae.github.io/Jedy.jl/stable/).
 
 For in-depth examples and complete documentation of Jedy's API:
 
