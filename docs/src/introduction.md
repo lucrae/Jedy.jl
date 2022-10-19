@@ -1,8 +1,8 @@
-# Background
+# [Background](@id introduction)
 
 ## Game theory
 
-The field of [game theory](https://en.wikipedia.org/wiki/Game_theory) studies the strategic interactions between (agents)[[https://en.wikipedia.org/wiki/Rational_agent](https://en.wikipedia.org/wiki/Rational_agent)], most commonly analysing the behaviour resulting from models of actions and payoffs. The analysis of game theory scenarios lead into the reasoning real-world complex systems in economics, political science, biology, computing, and social structures, primarily dissecting processes of decision making and behavioural relations.
+The field of [game theory](https://en.wikipedia.org/wiki/Game_theory) studies the strategic interactions between [agents](https://en.wikipedia.org/wiki/Rational_agenthttps://en.wikipedia.org/wiki/Rational_agent), most commonly analysing the behaviour resulting from models of actions and payoffs. The analysis of game theory scenarios lead into the reasoning real-world complex systems in economics, political science, biology, computing, and social structures, primarily dissecting processes of decision making and behavioural relations.
 
 ## **Agent-based simulation**
 
@@ -28,7 +28,7 @@ A very important aspect to the development of this package is an understanding o
 
 ## Typing
 
-The [type system]([https://en.wikipedia.org/wiki/Type_system](https://en.wikipedia.org/wiki/Type_system)) of a programming language regulates the usage of different data types/structures in a program. Formally, Julia is *strongly typed*, that is each variable/object must remain the same type in its lifetime (as opposed to weak, like Python, where terms can change type), and *dynamically type-checked*, that is the validity of this typing is checked at run-time (as opposed to static type-checking, like C++, done at compile time).
+The [type system](https://en.wikipedia.org/wiki/Type_system) of a programming language regulates the usage of different data types/structures in a program. Formally, Julia is *strongly typed*, that is each variable/object must remain the same type in its lifetime (as opposed to weak, like Python, where terms can change type), and *dynamically type-checked*, that is the validity of this typing is checked at run-time (as opposed to static type-checking, like C++, done at compile time).
 
 Dynamic type checking allows the types of variables to be “inferred”, such that Julia variables can be defined like such:
 
@@ -56,19 +56,19 @@ function imitation_process!(agents::Array{Jedy.Agent},
 end
 ```
 
-In this function all the types are clearly set out, including the core custom type of the “Agent.” Also note there is no returning type, thus this function does not return anything, and the Julia convention of this function’s naming using a “!” makes the clear that it uses in-place operations on the parameter types (i.e. the mutable array of agents can be manipulated).
+In this function all the types are clearly set out, including the core custom type of the “Agent.” Also note there is no returning type, thus this function does not return anything, and the Julia convention of this function’s naming using a “!” denotes that it uses in-place operations on the parameter types (i.e. the mutable array of agents can be manipulated).
 
 The philosophy of clear typing, even when the implicit typing is possible, is the clear *Julianic* way of a package such as Jedy to promote reliability.
 
 ## Composition over inheritance
 
-While (object-oriented)[[https://en.wikipedia.org/wiki/Object-oriented_programming](https://en.wikipedia.org/wiki/Object-oriented_programming)] languages such as Java will greatly favour (inheritance)[[https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))], using children of parents to represent sophisticated objects, [Julia does not support inheritance]([https://discourse.julialang.org/t/composition-and-inheritance-the-julian-way/11231](https://discourse.julialang.org/t/composition-and-inheritance-the-julian-way/11231)). Instead, there aren’t sophisticated objects, rather sophisticated combinations of objects, most ideally implemented [functionally]([https://en.wikipedia.org/wiki/Functional_programming](https://en.wikipedia.org/wiki/Functional_programming)) (that is, using functions).
+While (object-oriented)[[https://en.wikipedia.org/wiki/Object-oriented_programming](https://en.wikipedia.org/wiki/Object-oriented_programming)] languages such as Java will greatly favour (inheritance)[[https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))], using children of parents to represent sophisticated objects, [Julia does not support inheritance](https://discourse.julialang.org/t/composition-and-inheritance-the-julian-way/11231)). Instead, there aren’t sophisticated objects, rather sophisticated combinations of objects, most ideally implemented [functionally](https://en.wikipedia.org/wiki/Functional_programming) (that is, using functions).
 
 For Jedy, this means not creating seperate special different types of `Agent`s or encapsulating simulations within an object, but rather focusing on various functions and specifying what types can be given to them. For scientific computing, this approach has a huge advantage on reliability, and at times efficiency when evading overly-clunky object operations, by minimising the complexity of relationships.
 
 ## Thorough documentation
 
-Documentation is extremely important to a package’s utility. For Jedy, a modern use of Julia’s `Documenter.jl` was used to generate a detailed static website, found [here]([https://lucrae.github.io/Jedy.jl/stable/](https://lucrae.github.io/Jedy.jl/stable/)) in a conventional documentation structure with an introduction, usage, examples, as well as API documentation generated from Jedy's in-script docstrings with the `@autodocs` feature. Paired with the use of tagging to clearly version documentation, this makes for a thorough resource to learn and understand Jedy with easy scalibility to future developments.
+Documentation is extremely important to a package’s utility. For Jedy, a modern use of Julia’s `Documenter.jl` was used to generate a detailed static website, found [here](https://lucrae.github.io/Jedy.jl/stable/) in a conventional documentation structure with an introduction, usage, examples, as well as API documentation generated from Jedy's in-script docstrings with the `@autodocs` feature. Paired with the use of tagging to clearly version documentation, this makes for a thorough resource to learn and understand Jedy with easy scalibility to future developments.
 
 ## Open-sourcing
 

@@ -4,7 +4,7 @@
 
 Jedy provides fundamental tooling to work with agents and evolutionary algorithms, making use of Julia's speed and ease-of-development.
 
-- See [Introduction](@ref) for an in-depth explanation to Jedy's motivation and approach.
+- See [Introduction](@ref introduction) for an in-depth explanation to Jedy's motivation and approach.
 - See [Examples](@ref) for examples of using Jedy.
 - See [API](@ref) for complete documentation on Jedy's functions/types/etc.
 
