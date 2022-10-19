@@ -4,7 +4,9 @@ Full code can be found on [GitHub](https://github.com/lucrae/Jedy.jl/tree/master
 
 ## The Prisoner's Dilemma
 
-We can use Jedy to simulate agents playing the repeated [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) and an evolutionary process to see the success of defecting vs. cooperating.
+The [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) is a staple problem in game theory. Two agents must choose to either defect or cooperate with the other, without knowing the others' choice, where defecting when the other cooperates provides the highest reward `T` and lowest `S` to the other, but both defecting provides a low reward `P`, and both cooperating provides a decent reward `R` such that `T > R > P > S`. The key insight from analysing behaviour in the prisoner's dilemma is that agents will tend to defect instead of cooperate as the [Nash Equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium), even though this will result in an overall worse payoff in the end than cooperation. This is of fundamental interest to the study of how unoptimal consequences of cooperation/defection in the real world can occur.
+
+We can use Jedy to simulate agents playing the repeated [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) with an evolutionary process to see the success of defecting vs. cooperating.
 
 ### 1. Define population
 
