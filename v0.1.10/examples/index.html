@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · Jedy.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">Jedy.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../introduction/">Introduction</a></li><li class="is-active"><a class="tocitem" href>Examples</a><ul class="internal"><li><a class="tocitem" href="#The-Prisoner&#39;s-Dilemma"><span>The Prisoner&#39;s Dilemma</span></a></li></ul></li><li><a class="tocitem" href="../api/">API</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="github.com/lucrae/Jedy.jl.git" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h1><p>Full code can be found on <a href="https://github.com/lucrae/Jedy.jl/tree/master/examples">GitHub</a>.</p><h2 id="The-Prisoner&#39;s-Dilemma"><a class="docs-heading-anchor" href="#The-Prisoner&#39;s-Dilemma">The Prisoner&#39;s Dilemma</a><a id="The-Prisoner&#39;s-Dilemma-1"></a><a class="docs-heading-anchor-permalink" href="#The-Prisoner&#39;s-Dilemma" title="Permalink"></a></h2><p>The <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">Prisoner&#39;s Dilemma</a> is a staple problem in game theory. Two agents must choose to either defect or cooperate with the other, without knowing the others&#39; choice, where defecting when the other cooperates provides the highest reward <code>T</code> and lowest <code>S</code> to the other, but both defecting provides a low reward <code>P</code>, and both cooperating provides a decent reward <code>R</code> such that <code>T &gt; R &gt; P &gt; S</code>. The key insight from analysing behaviour in the prisoner&#39;s dilemma is that agents will tend to defect instead of cooperate as the <a href="https://en.wikipedia.org/wiki/Nash_equilibrium">Nash Equilibrium</a>, even though this will result in an overall worse payoff in the end than cooperation. This is of fundamental interest to the study of how unoptimal consequences of cooperation/defection in the real world can occur.</p><p>We can use Jedy to simulate agents playing the repeated <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">Prisoner&#39;s Dilemma</a> with an evolutionary process to see the success of defecting vs. cooperating.</p><h3 id=".-Define-population"><a class="docs-heading-anchor" href="#.-Define-population">1. Define population</a><a id=".-Define-population-1"></a><a class="docs-heading-anchor-permalink" href="#.-Define-population" title="Permalink"></a></h3><p>First, let&#39;s make a population of 100 agents with a randomly-assigned boolean attribute &quot;<code>behaviour</code>&quot; that defines if they defect (true) or cooperate (false):</p><pre><code class="language-julia hljs">import Jedy
+import Random
+
+N = 100
+agents = Array{Jedy.Agent}(undef, N)
+for i in 1:N
+    agents[i] = Jedy.Agent(Dict(&quot;behaviour&quot; =&gt; rand(Bool)))
+end</code></pre><h3 id=".-Define-way-of-determining-payoffs/fitness"><a class="docs-heading-anchor" href="#.-Define-way-of-determining-payoffs/fitness">2. Define way of determining payoffs/fitness</a><a id=".-Define-way-of-determining-payoffs/fitness-1"></a><a class="docs-heading-anchor-permalink" href="#.-Define-way-of-determining-payoffs/fitness" title="Permalink"></a></h3><p>We use a straight-forward function for two agents to play the Prisoner&#39;s Dilemma:</p><pre><code class="language-julia hljs">function play_prisoners_dilemma(agent_a::Jedy.Agent, agent_b::Jedy.Agent) :: Tuple{Int, Int}
+    T, R, P, S = 3, 2, 1, 0
+    action_a = agent_a.body[&quot;behaviour&quot;]
+    action_b = agent_b.body[&quot;behaviour&quot;]
+    if action_a &amp;&amp; action_b
+        return (P, P)
+    elseif action_a &amp;&amp; !action_b
+        return (T, S)
+    elseif !action_a &amp;&amp; action_b
+        return (S, T)
+    else
+        return (R, R)
+    end
+end</code></pre><p>We can then use this for our <code>compute_fitness</code> function. Here we compute fitness by the total payoff each agent accumulates against 1000 random opponents.</p><pre><code class="language-julia hljs">function compute_fitnesses(agents::Array{Jedy.Agent}) :: Array{Float64}
+    n = length(agents)
+    fitnesses = zeros(n)
+
+    for f in 1:n
+        for _ in 1:100 # Agent[f] plays 100 prisoner&#39;s dilemmas
+            r = f
+            while r == f # Pick non-self opponent
+                r = rand(1:n)
+            end
+            payoff_f, payoff_r = play_prisoners_dilemma(agents[f], agents[r])
+            fitnesses[f] += payoff_f
+            fitnesses[r] += payoff_r
+        end
+    end
+    return fitnesses
+end</code></pre><h3 id=".-Define-evolution-process"><a class="docs-heading-anchor" href="#.-Define-evolution-process">3. Define evolution process</a><a id=".-Define-evolution-process-1"></a><a class="docs-heading-anchor-permalink" href="#.-Define-evolution-process" title="Permalink"></a></h3><p>Let&#39;s use an <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.84.046111">imitation process</a>.</p><pre><code class="language-julia hljs"># Imitation process with w=0.2 (weak selection)
+imitation_process! = Jedy.EvolutionProcesses.create_imitation_process(0.2)</code></pre><h3 id=".-Run-simulation!"><a class="docs-heading-anchor" href="#.-Run-simulation!">4. Run simulation!</a><a id=".-Run-simulation!-1"></a><a class="docs-heading-anchor-permalink" href="#.-Run-simulation!" title="Permalink"></a></h3><p>Here we do 200 epochs:</p><pre><code class="language-julia hljs">Jedy.run_simulation!(agents,
+                     compute_fitnesses,
+                     imitation_process!,
+                     200)</code></pre><h3 id="(Optional)-Logging-to-CSV"><a class="docs-heading-anchor" href="#(Optional)-Logging-to-CSV">(Optional) Logging to CSV</a><a id="(Optional)-Logging-to-CSV-1"></a><a class="docs-heading-anchor-permalink" href="#(Optional)-Logging-to-CSV" title="Permalink"></a></h3><p>It&#39;s very useful to be able to log values from each epoch&#39;s agents. We can add a highly-customisable logger function easily:</p><pre><code class="language-julia hljs"># Logs the behaviour of each agent
+function logger(agents::Array{Jedy.Agent})
+    vals = map(a -&gt; a.body[&quot;behaviour&quot;], agents)
+    return &quot;temp.log&quot;, vals
+end
+
+# Run simulation with logger
+Jedy.run_simulation!(agents,
+                     compute_fitnesses,
+                     perform_imitation_process!,
+                     200,
+                     logger)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../introduction/">« Introduction</a><a class="docs-footer-nextpage" href="../api/">API »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 21 October 2022 05:39">Friday 21 October 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
