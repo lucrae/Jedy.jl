@@ -2,27 +2,25 @@
 
 ## Game theory
 
-The field of [game theory](https://en.wikipedia.org/wiki/Game_theory) studies the strategic interactions between [agents](https://en.wikipedia.org/wiki/Rational_agenthttps://en.wikipedia.org/wiki/Rational_agent), most commonly analysing the behaviour resulting from models of actions and payoffs. The analysis of game theory scenarios lead into the reasoning real-world complex systems in economics, political science, biology, computing, and social structures, primarily dissecting processes of decision making and behavioural relations.
+The field of [game theory](https://en.wikipedia.org/wiki/Game_theory) studies the strategic interactions between [agents](https://en.wikipedia.org/wiki/Rational_agenthttps://en.wikipedia.org/wiki/Rational_agent), most commonly analysing behaviour in models that result from certain actions and payoffs. The analysis of game theory scenarios lead into reasoning real-world complex systems in economics, political science, biology, computing, and social structures, primarily dissecting processes of decision making and behavioural relations.
 
-## **Agent-based simulation**
+## Agent-based simulation
 
-Agent-based simulations are a highly important scientific computing task in game theory. While mathematical analysis can provide closed-form or sound theoretical results to problems, developing and running simulations to play out the actions and interactions of autonomous agents in the theoretical of game theory are extremely useful in proving or disproving hypotheses, or revealing new insights into the model and the greater problems of social conflict, dilemmas, and cooperation that the model represents.
+Agent-based simulations are a highly important scientific computing task in game theory. While mathematical analysis can provide closed-form or sound theoretical results to problems, developing and running simulations to play out the actions and interactions of autonomous agents in the theoretical of game theory are extremely useful in proving or disproving hypotheses, or revealing new insights into the model and the greater problems of social conflict, dilemmas, and cooperation that the model represents. Agent-based simulations combined with [evolutionary processes](https://en.wikipedia.org/wiki/Evolutionary_computation) are highly useful to analyse the outcomes and *dynamics* of repeated actions and payoffs between agents.
 
-## **Scientific computing and the Julia language**
+## Scientific computing and the Julia language
 
 The compromises between [low-level](https://en.wikipedia.org/wiki/Low-level_programming_language) and [high-level](https://en.wikipedia.org/wiki/High-level_programming_language) programming languages presents a challenge for [scientific computing](https://en.wikipedia.org/wiki/Computational_science).
 
 Relatively lower-level languages (by modern standards) such as C/C++ provide highly efficient performance, but because their design is oriented towards systems programming they have a strong specificity for low-level or “machine-oriented” operations such as memory allocation that bloats development time and makes them very unsuitable for fast or intuitive prototyping—an attribute very important for scientific computing.
 
-Higher-level languages such as Python have consequently become popular in many areas of modern scientific computing due to a “friendlier” approach to readability and automation of low-level operations, but the implementation of being easy and dynamic, mainly through being interpreted—rather than compiled—also produces far less optimal performance. Especially in computing tasks that rely on optimised, repeated operations, such as simulations, the slowness of Python and other popular high-level languages produces magnitudes of inefficiency.
+Higher-level languages such as Python have consequently become popular in many areas of modern scientific computing due to a "friendlier" approach to readability and automation of low-level operations, but the implementation of being easy and dynamic, mainly through being interpreted—rather than compiled—also produces far less optimal performance. Especially in computing tasks that rely on optimised, repeated operations, such as simulations, the slowness of Python and other popular high-level languages produces magnitudes of inefficiency.
 
 First appearing in 2012–relatively recent for a programming language–the Julia programming language has emerged as a solution to this rift between ease and performance, providing the high-level dynamic readability of Python, but through sophisticated design decisions such as a [just-in-time (JIT) compiler](https://en.wikipedia.org/wiki/Just-in-time_compilation) and [eager evaluation](https://en.wikipedia.org/wiki/Evaluation_strategy#Eager_evaluation), it delivers on the optimised performance seen by the likes of C/C++, [achieving petaFLOP computations](https://juliacomputing.com/case-studies/celeste/index.html). Julia, as a result, presents new and exciting potential for new works in scientific computing.
 
-# Design of the **Jedy package**
+# Design of the Jedy package
 
-Jedy (name originating from from **J**ulia **E**volutionary **DY**namics) is a package developed to provide a lightweight framework for building reliable and efficient agent-based simulations in Julia.
-
-The primary focus is to provide abstractions that allow for quick, intuitive, and reliable development of agent-based ideas, as well as already implemented and tested functions to run commonly-used evolutionary algorithms such as imitation processes and Wright-Fisher evolution.
+Jedy (name originating from from **J**ulia **E**volutionary **DY**namics) is a package developed to provide a **lightweight framework for building reliable and efficient agent-based simulations in Julia**. The primary focus is to provide abstractions that allow for quick, intuitive, and reliable development of agent-based ideas, as well as already implemented and tested functions to run commonly-used evolutionary algorithms such as imitation processes and Wright-Fisher evolution.
 
 A very important aspect to the development of this package is an understanding of Julia’s design as a language, aiming for Jedy to be *idiomatic* to the language to fully leverage its strengths.
 
@@ -62,13 +60,13 @@ The philosophy of clear typing, even when the implicit typing is possible, is th
 
 ## Composition over inheritance
 
-While (object-oriented)[[https://en.wikipedia.org/wiki/Object-oriented_programming](https://en.wikipedia.org/wiki/Object-oriented_programming)] languages such as Java will greatly favour (inheritance)[[https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))], using children of parents to represent sophisticated objects, [Julia does not support inheritance](https://discourse.julialang.org/t/composition-and-inheritance-the-julian-way/11231)). Instead, there aren’t sophisticated objects, rather sophisticated combinations of objects, most ideally implemented [functionally](https://en.wikipedia.org/wiki/Functional_programming) (that is, using functions).
+While [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) languages such as Java will greatly favour [inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming), using children of parents to represent sophisticated objects, [Julia does not support inheritance](https://discourse.julialang.org/t/composition-and-inheritance-the-julian-way/11231)). Instead, there aren’t sophisticated objects but rather sophisticated combinations of objects, most ideally implemented [functionally](https://en.wikipedia.org/wiki/Functional_programming) (that is, using functions).
 
 For Jedy, this means not creating seperate special different types of `Agent`s or encapsulating simulations within an object, but rather focusing on various functions and specifying what types can be given to them. For scientific computing, this approach has a huge advantage on reliability, and at times efficiency when evading overly-clunky object operations, by minimising the complexity of relationships.
 
 ## Thorough documentation
 
-Documentation is extremely important to a package’s utility. For Jedy, a modern use of Julia’s `Documenter.jl` was used to generate a detailed static website, found [here](https://lucrae.github.io/Jedy.jl/stable/) in a conventional documentation structure with an introduction, usage, examples, as well as API documentation generated from Jedy's in-script docstrings with the `@autodocs` feature. Paired with the use of tagging to clearly version documentation, this makes for a thorough resource to learn and understand Jedy with easy scalibility to future developments.
+Documentation is extremely important to a package’s utility. For Jedy, a modern use of Julia’s `Documenter.jl` was used to generate a sophisticated static website, hosted [here](https://lucrae.github.io/Jedy.jl/stable/) in a conventional documentation structure with an introduction, usage, examples, as well as API documentation generated from Jedy's in-script docstrings with the `@autodocs` feature. Paired with the use of tagging to clearly version documentation, this makes for a thorough resource to learn and understand Jedy with easy scalibility to future developments.
 
 ## Open-sourcing
 
@@ -80,7 +78,7 @@ Being able to record intermediate and resulting data is key to scientific comput
 
 ## Example
 
-The [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) is a staple problem in game theory. Two agents must choose to either defect or cooperate with the other, without knowing the others' choice, where defecting when the other cooperates provides the highest reward `T` and lowest `S` to the other, but both defecting provides a low reward `P`, and both cooperating provides a decent reward `R` such that `T > R > P > S`. The key insight from analysing behaviour in the prisoner's dilemma is that agents will tend to defect instead of cooperate as the [Nash Equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium), even though this will result in an overall worse payoff in the end than cooperation. This is of fundamental interest to the study of how unoptimal consequences of cooperation/defection in the real world can occur.
+The [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) is a staple problem in game theory. Two agents must choose to either defect or cooperate with the other, without knowing the others' choice. Defecting when the other cooperates provides the highest reward `T` and lowest `S` to the other, but both defecting provides a low reward `P`, and both cooperating provides a decent reward `R` such that `T > R > P > S`. The key insight from analysing behaviour in the prisoner's dilemma is that agents will tend to defect instead of cooperate as the [Nash Equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium), even though this will result in an overall worse payoff in the end than cooperation. This is of fundamental interest to the study of how unoptimal consequences of cooperation/defection in the real world can occur.
 
 We can use Jedy to simulate agents playing the repeated [Prisoner's Dilemma](https://en.wikipedia.org/wiki/Prisoner%27s_dilemma) with an evolutionary process to see the success of defecting vs. cooperating.
 
